@@ -18,8 +18,18 @@ body {
   border-width: 0;
 }
 
-.index-column {
+.index__group {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.index__column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   box-sizing: border-box;
-  padding: 60px 110px;
-  width: 600px;
+  padding: 60px 0;
+  width: 400px;
+  height: 100vh;
 }

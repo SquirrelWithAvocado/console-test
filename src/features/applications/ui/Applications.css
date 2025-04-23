@@ -1,0 +1,39 @@
+.applications {
+    box-sizing: border-box;
+    padding: 10px 15px;
+
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.applications__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.applications__title {
+    margin: 0;
+    margin-bottom: 5px;
+
+    font-size: 12px;
+    color: #A0AEC0;
+}
+
+.applications__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.applications__item {
+    padding: 5px 10px;
+
+    background-color: #4FD1C5;
+    border-radius: 15px;
+}
