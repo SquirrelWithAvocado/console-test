@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+# Тестовое для фронтендера
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+В соответствии с описанием предтавления в задании реализован макет UI, веб-приложение с использованием библиотеки `React/ts`, внутренне управление состояний реализовано через `Redux/Redux toolkit`, взаимодействие с бэкендом реализовано через пакет `axios`, `chartjs` для отрисовки диаграм по данным, `react-tiny-toast` для отображения сообщений об ответах серевера.
 
-Currently, two official plugins are available:
+## Макет
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Макет реализован в figma: [ссылка на фигму](https://www.figma.com/design/0BtB3n1mq5X5DNT6ybVzlp/%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C?node-id=0-1&t=vtUKgUdUt0h5JaHB-1)
 
-## Expanding the ESLint configuration
+## Изменения в папке [backend](./backend/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Помимо оговоренных в задании .sql (groups.sql, metrics.sql) файлов добавлены файлы с запросами и соответствуюшие routes в express endpoints упрощающими работу на фронтенде (запрос по id группы, запрос по id ноды).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## На фронте
+
+В основном все реализовано в соответствии с [ТЗ](./ТЗ_на_разработку.docx), добавлены react-toastes для дополнительной информации о запросах.
+
+## Запуск приложения
+
+Сначала запускается бэк через папку backend
+
+```ps
+  npm run start
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Затем фронт:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```ps
+  npm run dev
 ```
