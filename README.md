@@ -20,11 +20,13 @@
 Сначала запускается бэк через папку backend
 
 ```ps
+  npm install
   npm run start
 ```
 
 Затем фронт:
 
 ```ps
+  npm install
   npm run dev
 ```
